@@ -1,0 +1,16 @@
+[Unit]
+Description=Specifio API
+After=network.target postgresql.service
+Requires=postgresql.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/claude/specifio
+ExecStart=/usr/bin/uvicorn app.main:app --host 127.0.0.1 --port 8400
+Restart=on-failure
+RestartSec=5
+EnvironmentFile=/home/claude/specifio/.env
+
+[Install]
+WantedBy=multi-user.target
