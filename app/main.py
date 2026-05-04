@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
 from app.database import engine
-from app.routers import auth
+from app.routers import auth, products, csv_import, projects, requests
 
 settings = get_settings()
 
@@ -41,6 +41,10 @@ async def health():
 
 
 app.include_router(auth.router)
+app.include_router(products.router)
+app.include_router(csv_import.router)
+app.include_router(projects.router)
+app.include_router(requests.router)
 
 # Route registration — uncomment as modules are built
 # from app.routes import products, specifiers, projects, samples, quotes, admin

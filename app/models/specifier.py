@@ -35,3 +35,6 @@ class Specifier(Base):
     updated_at = Column(DateTime(timezone=True), default=datetime.utcnow, nullable=False)
 
     magic_link_tokens = relationship("MagicLinkToken", back_populates="specifier", cascade="all, delete-orphan")
+    projects = relationship("Project", back_populates="specifier", cascade="all, delete-orphan")
+    sample_requests = relationship("SampleRequest", back_populates="specifier", cascade="all, delete-orphan")
+    quote_requests = relationship("QuoteRequest", back_populates="specifier", cascade="all, delete-orphan")

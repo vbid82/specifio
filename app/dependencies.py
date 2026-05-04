@@ -64,7 +64,7 @@ async def require_admin(
     specifier: Specifier = Depends(require_specifier),
 ) -> Specifier:
     """Raises 403 if not admin."""
-    if specifier.role_type != "admin":
+    if specifier.role != "admin":
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Admin access required")
     return specifier
 

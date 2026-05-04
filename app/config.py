@@ -28,6 +28,7 @@ class Settings(BaseSettings):
     app_url: str = "https://specifio.eu"
     api_url: str = "https://api.specifio.eu"
     cors_origins: str = "https://specifio.eu"
+    frontend_base_url: str = "https://specifio.eu"
 
     # Rate limits
     registration_rate_limit_per_ip: int = 5
