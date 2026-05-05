@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@theme {
+  --color-charcoal: #1A1A2E;
+  --color-specifio-blue: #2B6CB0;
+  --color-clean-white: #FAFAFA;
+  --color-warm-grey: #E2E0DC;
+  --color-slate: #4A5568;
+  --color-forest: #276749;
+  --color-ember: #C53030;
+
+  --font-satoshi: 'Satoshi', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-DEFAULT: 6px;
+
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-card-hover: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+body {
+  font-family: var(--font-satoshi);
+  color: var(--color-charcoal);
+  background-color: var(--color-clean-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
