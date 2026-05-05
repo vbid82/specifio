@@ -24,16 +24,21 @@ export interface Manufacturer {
 export interface Product {
   id: string
   manufacturer_id: string
+  manufacturer_name: string
   manufacturer?: Manufacturer
   sku: string
   name: string
   slug: string
   category: string
+  subcategory?: string | null
+  collection?: string | null
   description?: string
-  fire_class_eu?: string
-  fire_smoke_class_eu?: string
-  fire_droplet_class_eu?: string
+  fire_class_eu?: string | null
+  fire_smoke_class_eu?: string | null
+  fire_droplet_class_eu?: string | null
+  nrc_value?: string | null
   acoustic_nrc?: number
+  acoustic_class?: string | null
   commercial_grade?: string[]
   width_mm?: number
   height_mm?: number
@@ -41,17 +46,23 @@ export interface Product {
   weight_value?: number
   weight_unit?: string
   lead_time_weeks?: number
+  lead_time_weeks_min?: number
+  lead_time_weeks_max?: number | null
   moq?: number
   moq_unit?: string
   price_per_unit?: number
+  indicative_price_eur?: string | null
+  price_unit?: string | null
   price_currency?: string
   price_visibility?: string
   custom_colorway?: boolean
   colorway_count?: number
   sample_available?: boolean
-  sample_type?: string
+  sample_type?: string | null
   images?: ProductImage[]
   certifications?: ProductCertification[]
+  primary_image_url?: string | null
+  is_featured?: boolean
 }
 
 export interface ProductImage {
